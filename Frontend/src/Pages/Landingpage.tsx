@@ -63,7 +63,7 @@ function Landingpage() {
                 <a href="/about">Pricing</a>
               </li>
               <li className=" px-3 py-2">
-                <a href="/career">Login</a>
+                <a href="/login">Login</a>
               </li>
             </ul>
           </nav>
