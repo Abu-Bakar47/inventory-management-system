@@ -1,0 +1,48 @@
+{
+  "name": "invent-track-server",
+  "version": "1.0.0",
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "npx tsc -p tsconfig.json",
+    "start": "tsc && node dist/server.js",
+    "dev": "nodemon --watch 'src/**/*' -e ts,json --exec \"ts-node -r tsconfig-paths/register src/server.ts\"",
+    "seed:plans": "ts-node -r tsconfig-paths/register src/scripts/seedPlans.ts",
+    "lint": "eslint 'src/**/*.ts' --fix",
+    "test": "jest --detectOpenHandles",
+    "prestart": "npm run build",
+    "docker:build": "docker build -t inventory-saas .",
+    "docker:run": "docker run -p 5000:5000 --env-file .env inventory-saas"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.0.1",
+    "express-validator": "^7.2.1",
+    "helmet": "^8.1.0",
+    "http-status-codes": "^2.3.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongo-sanitize": "^1.1.0",
+    "mongoose": "^8.16.4",
+    "node-fetch": "^3.3.2",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "ua-parser-js": "^2.0.4"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.9",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/mongo-sanitize": "^1.0.3",
+    "@types/node": "^24.0.15",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.8.3"
+  }
+}
